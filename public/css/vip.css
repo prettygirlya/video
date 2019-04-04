@@ -1,0 +1,53 @@
+#tag{text-align:center}
+#tag span{border:2px solid #bababa;
+  display:inline-block;
+  height: 1px;width: 60%;margin-top:1.5rem;}
+#tag-p p:last-child{color:#bababa;font-size:0.9rem}
+@media (min-width: 992px) {
+  #tag-p p:first-child {font-size:1.5rem;margin:0}
+}
+@media (max-width: 991px) {
+  #tag-p p:first-child {font-size:1rem;margin:0}
+  #vipy,#vipj,#vipz{margin-bottom:1rem}
+}
+#vipy,#vipj,#vipz{border:2px solid  #d6d6d6;
+  box-shadow: 0 0 8px #d6d6d6;
+text-align:center;
+padding:5rem}
+#vipy h3,#vipj h3,#vipz h3{
+  font-size:1.5rem;
+}
+span[data-c='span' ]{ 
+  border-bottom:4px solid #0a8dce; 
+  display:inline-block;
+  width:80%;
+  height:2px;
+  margin-bottom:0.2rem;
+ }
+ #vipy img,span ,#vipj img,span,#vipz img,span{display:block;
+margin:0 auto}
+ #vipy img,#vipj img,#vipz img{
+   margin-bottom:0.5rem;
+   display:block;
+
+ }
+ span[data-c='ora']{
+   color:#ff6621;
+   font-size:1.8rem;
+ }
+ .btn{
+   background-color:transparent;
+  border:1px solid black;
+  width: 60%;
+  margin-top:0.8rem;
+transition:0.5s;height: 2.9rem;
+}
+.btn a{color:black !important}
+  .btn:hover{border-color:#ff6621;
+  color:#ff6621}
+  .btn a:hover{color:#ff6621 !important}
+  #side{background-color:#363942;
+    width:4rem;position:fixed;
+  right:0;top:50%;text-align:center}
+  #side ul li:nth-child(1):hover,#side ul li:nth-child(2):hover,#side ul li:nth-child(3):hover{background:blue}
+#side ul li:nth-child(4){background:blue}

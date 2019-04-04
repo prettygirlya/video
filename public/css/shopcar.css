@@ -1,0 +1,68 @@
+p,body{margin:0;padding:0}
+#title p{display:inline-block;margin:0;font-size:1.2rem}
+#title{border:1px solid #88dfae;
+padding:8px;
+display:flex;
+justify-content:space-between;
+line-height:2rem;
+color:#10ac62}
+.btn{background-color: #10ac62;
+}
+.car-sapn1{margin-left:50%;}
+.car-sapn{margin-left:13%}
+.border-bottom{border-width:4px !important}
+.border-bottom span{font-size:1rem;font-weight:700}
+.btn a{color:white !important}
+#vipcar p{display:inline-block}
+/* #vipcar input{background-color: transparent;
+  font-size:1.3rem;
+  padding:0.5rem;
+outline: none;
+border:none} */
+#vipcar input{    background: none;
+  background-image: none;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  border-color: #cccccc;
+  height: 40px!important;
+  width: 26px!important;}
+  #side{background-color:#363942;
+    width:4rem;position:fixed;
+  right:0;top:50%;text-align:center}
+  #side ul li:nth-child(1):hover,#side ul li:nth-child(2):hover,#side ul li:nth-child(3):hover{background:blue}
+#side ul li:nth-child(4){background:blue}
+  #data .border-bottom-4{
+    border-bottom:3px solid  #dee2e6 !important;
+  }
+  #data>p{font-weight:700}
+  .car-amount{text-align:left}
+  .car-aright{text-align:right}
+  #datahh thead{border-bottom:5px solid #dee2e6  !important}
+  input{text-align:center}
+@media (min-width: 992px) { 
+  
+}
+@media (max-width: 991px) {
+  #title button{display:none}
+  #vipcar img,p,span{padding:0 !important;margin:0 !important}
+  #datahh thead tr th:last-child{display:none}
+  #datahh tbody tr td:first-child{padding:1rem 0.5rem 1rem 0!important}
+  #datahh tbody tr td:first-child img{width:23px}
+  #datahh tbody tr td:nth-child(2) img{
+    width: 80px !important;
+  }
+  #datahh tbody tr td:nth-child(3),#data-hh tbody tr td:nth-child(4),#data-hh tbody tr td:nth-child(5){font-size:0.8rem}
+  #datahh tbody tr td:nth-child(6){display:none}
+}
+#data table tbody tr:nth-child(3) td button{width:100%;
+  padding:8px;
+  background-color: black;
+  color:white;
+border:none;
+box-shadow: 0;
+font-size:1.3rem;
+margin-top:0.8rem;
+cursor: pointer;}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<link rel="stylesheet" href="bootstrap/bootstrap.css"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src='js/iframes.js'></script>
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<!-- onload='aadd()' -->
+<body >
+  		<!-- 大屏 -->
+      <div id='lg'>
+          <div class='bg-light'>
+          <div class='container  '>
+            <!-- 最顶部登录注册 -->
+            <div class='row flex-lg-nowrap bg-light justify-content-end p-2 color-footer'>
+              <div class='col-lg-3 pl-5'>
+                <img src="img/yonghu.png" alt="">
+                <span><a href='login.html' target='_parent'>登录</a></span>
+                <img src="img/zhuce.png" alt="">
+                <span><a href='login.html' target='_parent'>注册</a></span>
+              </div>
+            </div>
+          </div>
+          </div>
+            <!-- logo 搜索 -->
+            <div class='nav-bg pt-5'>
+              <div class='container'>
+                <div class='row rel'>
+                  <div class='col-lg-7 '>
+                    <img src="img/logo.png" alt="" class='w-25'>
+                  </div>
+                  <div class='col-lg-5 '>
+                    <input type="text" id='kwords' class=' inp  pl-3  rounded-0' placeholder="请输入您要搜索的内容">
+                    <a class=' btn btn-sousuo rounded-0 abs'  href='javascript:;' onclick='find()'>搜索
+                    </a>
+                  </div>
+                </div> 
+                <div class='pt-4 pb-3' >
+                  <span class='mr-5'><a href="index.html" target='_parent'>片库首页</a></span>
+                   <span class='mr-5'><a href="onload.html" target='_parent'>在线剧集</a></span>
+                  <span class='mr-5'><a href="vip.html" target='_parent'>会员套餐</a></span>
+                  <span class='mr-5'><a href="#">关于我们</a></span>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- 大屏消失时 -->
+      <div class='dis' id="di">
+          <div class="container  ">
+              <ul class="nav nav-justified  ">
+                  <li class="nav-item">
+                    <a href="index.html" target='_parent' class="nav-link">片库首页</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="onload.html" target='_parent' class="nav-link">在线剧集</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="vip.html" target='_parent' class="nav-link">会员套餐</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:;"  class="nav-link">关于我们</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <!-- 小屏 和中屏  -->
+      <div id='sm'>
+        <div class='container-fluid p-0'>
+          <div class='bg-light text-c pt-3 pb-3  d-flex
+          justify-content-around'>
+              <div id="mySidenav" class="sidenav">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <a href="#">片库首页</a>
+                  <a href="#####" onclick='open()'>在线剧集</a>
+                  <ul id="myUl" >
+                    <li><a href="#">银牌会员</a></li>
+                    <li><a href="#">金牌会员</a></li>
+                    <li><a href="#">钻石会员</a></li>
+                  </ul>
+                  <a href="#">会员套餐</a>
+                  <a href="#">关于我们</a>
+                </div>
+                <span  onclick="openNav()">&#9776; </span>
+                <div class='header-logo'>
+                  <img src="img/logo.png" alt="" class=>	
+                </div>
+                <div class='he'>
+                  <a href='#'><img src="img/yonghu.png" alt=""></a>
+                  <a href='#'><img src="img/sousuo.png" alt=""></a>
+                  <a href='vshopcar.html?vid=1'><img src="img/gouwuche.png" alt=""></a>
+                </div>
+              </div>
+        </div>
+      </div>
+    <!--登录  -->
+    <div class='container'> 
+      <div class='row'>
+        <div class='col-lg-8 col-sm-12 notice' >
+          <!-- 左侧公告 -->
+          <h3>登录/注册</h3>
+          <span>说明：</span>
+          <ul start='1' class='list-unstyled'>
+            <li>1、演示用户名：demouser；密码： demo1234</li>
+            <li>2、实际使用之前，需配置用户管理组件中的相关邮件。
+              详情请参考教程：《用户管理中相关邮件的配置》
+            </li>
+            <li>3、新用户注册后的审核方式有三种：自动核准、邮件激活、
+              需要管理员批准（即人工审核），详情可参考教程
+              《如何设置用户注册后的审核方式》
+            </li>
+          </ul>
+        </div>
+        <div class='col-lg-4 col-sm-12' id='login' >
+          <!-- form表单 登录 -->
+          <form action="" method='post'>
+            <span class='my-small'>手机/用户/邮箱</span><br>
+            <input type="text" id='uuname'><br>
+            <span class='my-small'>密码</span><br>
+            <input type="password" id='upwd'><br>
+            <input type="checkbox" id='check'>
+            <label for="check">记住我（请在私人设备上使用此功能</label>
+            <span class='border-need'></span>
+            <button class='btn btn-p' onclick='login_ya()' type='button'>登录</button><br>
+            <button class='btn reg'  type='button' class='reg' onclick='pnum()'>注册</button><br>
+            <span class='my-small'>第三方账号登录:</span>
+            <img src="img/QQ (2).png" alt=""><br>
+            <a href="javascript:;" class='my-small right-q'>忘记密码?点这里找回</a>
+          </form>
+          <!-- 注册 -->
+          <form action="/lo/reg" method='post' id='regs'>
+            <p class='my-small'>电话号码<span class='text-danger ml-2'>*</span></p>
+            <input text='text'  class='pnum' name='num'>
+            <p class='vali-p'>电话号码输入正确</p>
+            <p class='vali-p'>电话号码输入错误</p>
+            <p class='my-small'>短信验证码<span class='text-danger ml-2'>*</span></p>
+            <input type='text'  class='pnum1' name='dx' id='rela'>
+            <p class='vali-p'>验证码输入正确</p>
+            <p class='vali-p'>验证码输入错误</p>
+            <p class='my-small'>密码<img src='img/gantanhao.png'>
+              <span class='text-danger ml-2'>*</span>
+            </p>
+            <input type='password'  class='pnum2' name='pwd'>
+            <p class='my-small'>再次输入密码</p>
+            <input type='password' name='agpwd'>
+            <p class='vali-p'>两次密码输入一致</p>
+            <p class='vali-p'>两次密码输入不一致</p>
+            <p class='my-small'>密码强度</p>
+            <span>柱状条<span>
+            <span class='border-need'></span>
+            <input type='checkbox' id='fame'>
+            <label for='fame'>
+              我同意《用户手册》和《保密条款》
+            </label>
+            <span class='border-need'></span>
+            <button class='btn-reg'  type='submit'>注册</button>
+            <a click='' href='javascript:;' class='my-small right-q'>
+              已经有账号了?请登录
+            </a><br>
+            <span class='my-small' >第三方账号登录:</span>
+            <img src="img/QQ (2).png" alt="">
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="mt-5">
+        <iframe  class="my_footer" src="footer.html" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" width="100%" height=100% id="hIframeb" onload='bbb()'></iframe>
+      </footer>
+      <!-- 侧边栏 -->
+      <div class='container'>
+          <div id='side' >
+            <ul class='list-unstyled'>
+              <li class='p-2'><a href=""><img src="img/icon-service.png" alt=""></a></li>
+              <li class='p-2'><a href=""><img src="img/qq.png" alt=""></a></li>
+              <li class='p-2'><a href=""><img src="img/weixin.png" alt=""></a></li>
+              <li class='p-2'><a href=""><img src="img/ziyuan.png" alt=""></a></li>
+            </ul>
+        </div>
+      </div>
+<script>
+        // header
+        // function aaa(){
+        //   var a=window.frames[0].window.document.body.scrollHeight-2;
+        //   hIframe.style.height=a+'px'
+        // }
+        window.onresize=function(){
+          //aaa()
+          bbb()
+        }
+        // // footer
+        // function bbb(){
+        //   var b=window.frames[1].window.document.body.scrollHeight-2;
+        //   hIframeb.style.height=a+'px'
+        // }
+        function bbb(){
+	 var a=window.frames[0].window.document.body.scrollHeight-2;
+	 hIframeb.style.height=a+'px'
+ }
+</script> 
+<script>
+  //注册
+  function pnum(){
+    var a=document.getElementById('login')
+    var d=a.firstElementChild
+    var c=a.lastChild
+    d.style.display='none'
+    c.style.display='block'
+  }
+  function pnum1(){
+    var a=document.getElementById('login')
+    var d=a.firstElementChild
+    var c=a.lastChild
+    d.style.display='block'
+    c.style.display='none'
+  }
+//注册表单验证
+var form=document.forms[1]
+var txtnum=form.num
+var txtdx=form.dx
+var txtpwd=form.pwd
+var txtagpwd=form.agpwd
+function onFocus(a){
+  a.nextElementSibling.className='vali-p'
+  a.nextElementSibling.nextElementSibling.className='vali-p'
+}
+txtnum.onfocus=function(){
+  onFocus(txtnum)
+}
+txtdx.onfocus=function(){
+  onFocus(txtdx)
+}
+txtagpwd.onfocus=function(){
+  onFocus(txtagpwd)
+}
+txtnum.onblur=function(){
+  vali(this,/^1[3,5,7,8]\d{9}$/); 
+}
+txtdx.onblur=function(){
+  vali(this,/^\d{4}$/);
+}
+txtagpwd.onblur=function(){
+  if(this.value==txtpwd.value){
+    this.nextElementSibling.className=''
+    this.nextElementSibling.className='vail-p'
+  }else{
+    this.nextElementSibling.nextElementSibling.className=''
+    this.nextElementSibling.nextElementSibling.className='vail-p'
+  }
+}
+function vali(txt,reg){
+var psuc=txt.nextElementSibling
+var perr=psuc.nextElementSibling
+  //用reg测试当前文本框的内容
+    //如果通过,就修改div的class为vali_success
+    if(reg.test(txt.value)){
+      psuc.className=''
+      psuc.className="vali";
+      return true;//添加返回值 下面做判断用
+    //否则修改div的class为vali_fail
+    }else{
+      perr.className=''
+      perr.className="vali";
+      return false;
+    }
+}
+//登录
+function login_ya(){
+  var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4 && xhr.status==200){
+          var result=xhr.responseText;
+          if(result=='suc'){
+            location.href = "http://127.0.0.1:3000/index.html";
+          }else{
+            alert(`密码错误`)
+          }
+        }
+			}
+			var url='/lo/login';
+      xhr.open('post',url,true);
+      xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded')
+			var formdata='num='+uuname.value+'&upwd='+upwd.value
+			xhr.send(formdata);		
+}
+</script>
+	<script>
+      //大屏
+    window.onscroll=function (){
+      var ss=document.documentElement.scrollTop
+      if(ss>195){
+        di.className='pos'
+      }else{
+        lg.className=''
+        di.className='dis'
+      }
+    }
+    </script>
+    <script>
+      // // 搜索
+      // function sel(){
+      //     location.href='http://127.0.0.1:3000/search.html?kwords='+kwords.value
+      //   }   
+      // function aadd(){
+      //   var kword=location.href.split('=')[1]
+      //   console.log(kword)
+      //   var xhr=new XMLHttpRequest();
+      //   xhr.onreadystatechange=function(){
+      //     if(xhr.readyState==4 && xhr.status==200){
+      //       var result=xhr.responseText;
+      //       var arr=JSON.parse(result)
+      //       if(arr.length>0){
+      //       for (var a of arr){
+      //         console.log(a)
+      //         sear.innerHTML+=`
+      //         <div class='col-sm-6'>
+      //           <p>${a.pname}</p>
+      //           <img src='${a.src}'>
+      //           <span>${a.vip}</span>
+      //           <p>${a.pscore}</p>
+      //         </div>`
+      //       }
+      //     }else{
+      //     sear.innerHTML=`<h1>暂无符合条件的视频</h1>`
+      //   }
+      //   }
+      // }
+      //   var url='/lo/s?pname='+kword+'&num='+uuname.value+'&page='+page.value
+      //   console.log(url)
+      //   xhr.open('get',url,true);
+      //   xhr.send(null);   
+      // }	
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="css/manage.css">
+</head>
+<body onload='video()'>
+  <div class='tabs'>
+    <ul id="tab">
+      <li><a href="#" data-target='content1' data-toggle='tab'>视频管理</a></li>
+      <li><a href="#" data-target='content2' data-toggle='tab' >用户列表</a></li>
+      <li><a href="#" data-target='content3' data-toggle='tab'>视频分类</a></li>
+    </ul>
+  </div>
+  <div id="container">
+    <div id="content1" class='show'>
+      <h1 class='border-bottom'>视频管理</h1>
+      <table id='tbl' border='1px;'>
+
+      </table>
+      <div id='tas'>
+        <button onclick='func()'>确认修改</button>
+      </div>
+    </div>
+    <div id="content2">
+      <h1>用户列表</h1>
+     
+    </div>
+    <div id="content3">
+      <h1>视频分类</h1>
+    </div>
+  </div>
+<script>
+     document.getElementById('content1').style.zIndex=9;
+    // 查找触发事件的元素
+    var tabs=document.querySelectorAll('[data-toggle=tab]');
+    var n=10
+    for(var tab of tabs){
+      tab.onclick=function(){
+        var tab=this;
+        // 用id查找对应的div
+        var id=tab.getAttribute('data-target')
+        // tab.dataset.target
+        var content=document.getElementById(id)
+        // 所有带-的css属性,都要去-变驼峰
+        content.style.zIndex=n;
+        n++
+      }
+    }
+</script>
+<script>
+  function video(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4 && xhr.status==200){
+        var result=xhr.responseText;
+        var arr=JSON.parse(result);
+    var table=
+      document.getElementById("tbl");
+    var thead=table.createTHead();
+    table.appendChild(thead);
+    var tr=thead.insertRow()
+    thead.appendChild(tr);
+    //遍历json数组中第一个对象的每个key
+    for(var key in arr[0]){
+      //创建th
+      var th=
+        document.createElement("th");
+      //设置th的内容为key
+      th.innerHTML=key;
+      tr.appendChild(th);
+    }
+    // 多加一个 用作操作
+    tr.insertCell().innerHTML='操作';
+    //创建tbody
+    var tbody=table.createTBody();
+    table.appendChild(tbody);
+    //遍历json中每个员工
+    for(var i=0;i<arr.length;i++){
+      var tr=
+        document.createElement("tr");
+      tbody.appendChild(tr);
+      //遍历当前员工的每个属性
+      for(var key in arr[i]){
+        var td=
+          document.createElement("td");
+        //设置td的内容为key对应的属性值
+        td.innerHTML=arr[i][key];
+        tr.appendChild(td);
+      }  
+      var td=document.createElement('td')
+      tr.appendChild(td)
+      td.innerHTML=`<a data-lid='${arr[i].lid}' href='javascript:;'>点击进入修改</a>`
+        }
+      
+      }
+    }
+    var url='/lo/video'
+		xhr.open('get',url,true);
+		xhr.send(null);
+  }	
+
+</script>
+<script src='js/jquery-1.11.3.js'></script>
+<script>
+$('#tbl').on('click','a',function(){
+  var cc=$(this).attr('data-lid')
+  resive(cc)
+  tbl.innerHTML=''
+  function resive(lid){
+  var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4 && xhr.status==200){
+        var result=xhr.responseText;
+        var arr=JSON.parse(result)
+        var table=
+      document.getElementById("tbl");
+    var thead=table.createTHead();
+    table.appendChild(thead);
+    var tr=thead.insertRow()
+    thead.appendChild(tr);
+    //遍历json数组中第一个对象的每个key
+
+    for(var key in arr[0]){
+      //创建th
+      var th=
+        document.createElement("th");
+      //设置th的内容为key
+      th.innerHTML=key;
+      tr.appendChild(th);
+    }
+    //创建tbody
+    var tbody=table.createTBody();
+    table.appendChild(tbody);
+    //遍历json中每个员工
+    for(var i=0;i<arr.length;i++){
+      var tr=
+        document.createElement("tr");
+      tbody.appendChild(tr);
+      //遍历当前员工的每个属性
+      for(var key in arr[i]){
+        var td=
+          document.createElement("td");
+        //设置td的内容为key对应的属性值
+        td.innerHTML=arr[i][key];
+        tr.appendChild(td);
+        };
+      }
+      var tabl=document.getElementById('tas')
+      for(var key in arr[0]){
+        //创建th
+        var th=
+          document.createElement("h3");
+        //设置th的内容为key
+        th.innerHTML=key;
+        var int=
+          document.createElement("input")
+          int.type='text';
+        tabl.appendChild(th);
+        tabl.appendChild(int)
+      }
+    }
+      }
+    var url='/lo/details?lid='+lid
+    xhr.open('get',url,true);
+    xhr.send(null);
+  	
+    }
+})
+</script>
+<script>
+function func(){
+  if(confirm(`是否确认修改`)){
+    function resive(lid){
+  var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4 && xhr.status==200){
+        var result=xhr.responseText;
+        var arr=JSON.parse(result)
+     
+       }
+      }
+      var url='/lo/s'
+      xhr.open('get',url,true);
+      xhr.send(null);
+    }
+  }
+}
+</script>
+</body>
+</html>

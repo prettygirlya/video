@@ -1,0 +1,28 @@
+{
+  "name": "video",
+  "version": "1.0.0",
+  "description": "视频,自适应",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prettygirlya/video.git"
+  },
+  "keywords": [
+    "视频"
+  ],
+  "author": "吴彦祖",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prettygirlya/video/issues"
+  },
+  "homepage": "https://github.com/prettygirlya/video#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}

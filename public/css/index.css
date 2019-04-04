@@ -1,0 +1,50 @@
+*{padding:0;margin:0}
+.bg-gonggao{background-color: #f4f4f4;
+border:2px solid #ededed; }
+.my-font{font-size:1rem}
+.h-85 { height: 85% !important;}
+.color-b{color:#1c78bf}
+.my-smalls{font-size:0.9rem}
+#pic_h p{color:gray;font-size:0.9rem}
+#pic_m,#pic_r,#pic_y,#pic_h span{color:#ff6621}
+#pic_y p{color:gray;font-size:0.9rem}
+#pic_r p{color:gray;font-size:0.9rem}
+#pic_m p{color:gray;font-size:0.9rem}
+.button{display:inline-block;
+  max-width:100%;
+  text-align:center;
+   font-family:微软雅黑; 
+   font-size:11px; 
+   background-color:transparent;
+    color:#363942; 
+    border-width:1px;
+     border-style:solid;
+     border-color:#363942;
+      padding:6px 12px;
+     }
+.d-i{display:inline-block}
+@media (min-width: 992px) {
+  .button{margin-left:60%}
+}
+@media (max-width: 991px) {
+  .button{margin-left:30%}
+}
+.bg-vip{background-color:#fcfae3;border:2px solid #b78b37 }
+#vip img{margin:0 auto;border:5px solid #b78b37}
+#vip{text-align:center}
+.my-weight{font-weight: 800}
+.font-c{color:gray;font-weight:500}
+.btna{width: 80%;
+  background-color: rgb(232, 151, 30);
+border:2px solid rgb(209, 124, 27);
+color:white;}
+.my-vip{font-size :1.3rem;}
+#vip a{color:black !important}
+/* 侧边栏 */
+#side{
+  width:4rem;position:fixed;
+right:0;top:50%;text-align:center}
+#side ul li{background-color:#363942;}
+#side ul li:nth-child(1):hover,#side ul li:nth-child(2):hover,#side ul li:nth-child(3):hover{background:#0a8dce}
+#side ul li:nth-child(4){background:#0a8dce}
+.row{padding:0 !important}

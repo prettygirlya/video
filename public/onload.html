@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<link rel="stylesheet" href="bootstrap/bootstrap.css"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src='js/iframes.js'></script>
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/onload.css">
+</head>
+<body>
+<header>
+    <div id='lg'>
+        <div class='bg-light'>
+        <div class='container  '>
+          <!-- 最顶部登录注册 -->
+          <div class='row flex-lg-nowrap bg-light justify-content-end p-2 color-footer'>
+            <div class='col-lg-3 pl-5'>
+              <img src="img/yonghu.png" alt="">
+              <span><a href='login.html' target='_parent'>登录</a></span>
+              <img src="img/zhuce.png" alt="">
+              <span><a href='login.html' target='_parent'>注册</a></span>
+            </div>
+          </div>
+        </div>
+        </div>
+          <!-- logo 搜索 -->
+          <div class='nav-bg pt-5'>
+            <div class='container'>
+              <div class='row rel'>
+                <div class='col-lg-7 '>
+                  <img src="img/logo.png" alt="" class='w-25'>
+                </div>
+                <div class='col-lg-5 '>
+                  <input type="text" id='kwords' class=' inp  pl-3  rounded-0' placeholder="请输入您要搜索的内容">
+                  <a class=' btn btn-sousuo rounded-0 abs'  href='javascript:;' onclick='find()'>搜索
+                  </a>
+                </div>
+              </div> 
+              <div class='pt-4 pb-3' >
+                <span class='mr-5'><a href="index.html" target='_parent'>片库首页</a></span>
+                 <span class='mr-5'><a href="onload.html" target='_parent'>在线剧集</a></span>
+                <span class='mr-5'><a href="vip.html" target='_parent'>会员套餐</a></span>
+                <span class='mr-5'><a href="#">关于我们</a></span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- 大屏消失时 -->
+    <div class='dis' id="di">
+        <div class="container  ">
+            <ul class="nav nav-justified  ">
+                <li class="nav-item">
+                  <a href="index.html" target='_parent' class="nav-link">片库首页</a>
+                </li>
+                <li class="nav-item">
+                  <a href="onload.html" target='_parent' class="nav-link">在线剧集</a>
+                </li>
+                <li class="nav-item">
+                  <a href="vip.html" target='_parent' class="nav-link">会员套餐</a>
+                </li>
+                <li class="nav-item">
+                  <a href="javascript:;"  class="nav-link">关于我们</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 小屏 和中屏  -->
+    <div id='sm'>
+      <div class='container-fluid p-0'>
+        <div class='bg-light text-c pt-3 pb-3  d-flex
+        justify-content-around'>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">片库首页</a>
+                <a href="#####" onclick='open()'>在线剧集</a>
+                <ul id="myUl" >
+                  <li><a href="#">银牌会员</a></li>
+                  <li><a href="#">金牌会员</a></li>
+                  <li><a href="#">钻石会员</a></li>
+                </ul>
+                <a href="#">会员套餐</a>
+                <a href="#">关于我们</a>
+              </div>
+              <span  onclick="openNav()">&#9776; </span>
+              <div class='header-logo'>
+                <img src="img/logo.png" alt="" class=>	
+              </div>
+              <div class='he'>
+                <a href='#'><img src="img/yonghu.png" alt=""></a>
+                <a href='#'><img src="img/sousuo.png" alt=""></a>
+                <a href='vshopcar.html?vid=1'><img src="img/gouwuche.png" alt=""></a>
+              </div>
+            </div>
+      </div>
+    </div>
+</header>
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-9'>
+      <!-- 导航 -->
+      <div id='onload-nav'>
+        <ul class="nav ">
+          <li class="nav-item "><span class="nav-link my-weight">剧集</span></li>
+          <li class="nav-item "><a href="javscript:;" class="nav-link" data-kind='' onclick='showa()'>热门</a></li>
+          <li class="nav-item "><a href="javscript:;" class="nav-link" data-kind='m'>美剧</a></li>
+          <li class="nav-item "><a href="javscript:;" class="nav-link" data-kind='y'>英剧</a></li>
+          <li class="nav-item "><a href="javscript:;" class="nav-link" data-kind='r'>日剧</a></li>
+          <li class="nav-item "><a href="javscript:;" class="nav-link" data-kind='h'>韩剧</a></li>
+          <li class="nav-item "><a href="javscript:;" class="nav-link" data-kind='g'>港剧</a></li>
+        </ul>
+        <ul class="nav ">
+          <li class="nav-item "><span class="nav-link my-weight">会员</span></li>
+          <li class="nav-item "><a href="javscript:;" class="nav-link" data-vip='all'>全部</a></li>
+          <li class="nav-item "><a href="javscript:;" class="nav-link" data-vip='y'>银牌</a></li>
+          <li class="nav-item "><a href="javscript:;" class="nav-link" data-vip='j'>金牌</a></li>
+          <li class="nav-item "><a href="javscript:;" class="nav-link" data-vip='z'>钻石</a></li>
+        </ul>
+      </div>
+      <!-- 根据请求不同 动态生成视频内容 -->
+      <div >
+        <div class='row' id='nan'> 
+
+        </div>
+      </div>
+    </div>
+    <!-- 公告 -->
+    <div class='col-lg-3'>
+      <div class='bg-gonggao  mt-2 p-3'>
+        <h4 class="pt-5 pb-4">hello world
+          <span class="my-font">How to use</span>
+        </h4>
+        <p class="pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deleniti distinctio earum eius excepturi quidem velit veniam voluptatibus? Dolore dolorem eveniet expedita impedit nostrum odit officia omnis porro, repellendus suscipit.</p>
+      </div>
+      <div class='bg-vip mt-4' id='vip'>
+          <h4 class='pt-5 pb-4 my-font my-weight'>会员专享通道 <span class='my-small font-c'>The VIP channel</span>	</h4>
+            <img src="img/vip.jpg" alt="" class='w-75'>
+            <button class='btn btn-r mt-4 my-vip mb-3'>
+              <a href='vip.html'>开通VIP会员</a>
+            </button>
+            <p class="my-smalls">	亲，开通会员VIP可免费观看本站专享视频。</p>
+        </div>
+    </div>
+  </div>
+</div>
+	<!--导入footer.html-->
+<footer class="mt-5">
+  <iframe  class="my_footer" src="footer.html" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" width="100%" height=100% id="hIframeb" onload='bbb()'></iframe>
+</footer>
+<!-- 侧边栏 -->
+<div class='container'>
+    <div id='side' >
+      <ul class='list-unstyled'>
+        <li class='p-2'><a href=""><img src="img/icon-service.png" alt=""></a></li>
+        <li class='p-2'><a href=""><img src="img/qq.png" alt=""></a></li>
+        <li class='p-2'><a href=""><img src="img/weixin.png" alt=""></a></li>
+        <li class='p-2'><a href=""><img src="img/ziyuan.png" alt=""></a></li>
+      </ul>
+  </div>
+</div>
+  <script src='js/jquery-1.11.3.js'></script>
+  <script>
+      window.onresize=function(){
+        bbb()
+      }
+      // footer
+      function bbb(){
+        var a=window.frames[0].window.document.body.scrollHeight-2;
+        hIframeb.style.height=a+'px'
+      }
+  </script>
+  <script>
+    window.onload=function(){
+      showa()
+      //login()
+      //getVideo()
+    }
+    $('#onload-nav ul:first-child').on('click','a',function(){
+             $data=$(this).attr('data-kind')
+              show($data);
+              nan.innerHTML=''
+    }) 
+    //根据参数查询的结果
+    function show(a){
+      //console.log(a)
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4 && xhr.status==200){
+          var result=xhr.responseText; 
+          //console.log(result)
+          var arr=JSON.parse(result);
+          for(var i=0;i<arr.length;i++){
+              nan.innerHTML+=`<div class="col-lg-2 col-sm-4 p-1  " >
+              <img src='${arr[i].src}' class=\'w-100  \'/>
+              <a href='details.html?lid=${arr[i].lid}'><h4 class=\'my-smalls color-b\'>${arr[i].pname}</h4></a>
+              <p>${arr[i].pscore}</p>
+              <span>${arr[i].vip}</span>
+              </div>`
+            }
+        }
+      }
+      //console.log(a)
+      var url='/lo/on?juzhong='+a;
+      //console.log(url)
+			xhr.open('get',url,true);
+			xhr.send(null);
+    }	
+    // 默认加载
+    function showa(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4 && xhr.status==200){
+					var result=xhr.responseText;
+					var arr=JSON.parse(result);
+          for(var i=0;i<arr.length;i++){
+              nan.innerHTML+=`<div class="col-lg-2 col-sm-4 p-1  " >
+              <img src='${arr[i].src}' class=\'w-100  \'/>
+              <a href='details.html?lid=${arr[i].lid}'><h4 class=\'my-smalls color-b\'>${arr[i].pname}</h4></a>
+              <p>${arr[i].pscore}</p>
+              <span>${arr[i].vip}</span>
+              </div>`
+            }
+				
+				}
+			}
+			var url='/lo/pic';
+			xhr.open('get',url,true);
+			xhr.send(null);
+    }	
+    // 二次筛选
+    $('#onload-nav ul:last-child').on('click','a',function(){
+              $datav=$(this).attr('data-vip')
+              //console.log($datav)
+              nan.innerHTML=''
+              showab($data,$datav)
+      function showab(a,b){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4 && xhr.status==200){
+					var result=xhr.responseText;
+          var arr=JSON.parse(result);         
+          console.log(b)
+          for(var i=0;i<arr.length;i++){
+              nan.innerHTML+=`<div class="col-lg-2 col-sm-4 p-1  " >
+              <img src='${arr[i].src}' class='w-100  '/>
+              <a href='details.html?lid=${arr[i].lid}'><h4 class='my-smalls color-b'>${arr[i].pname}</h4></a>
+              <p>${arr[i].pscore}</p>
+              <span>${arr[i].vip}</span>
+              </div>`
+            }
+        }
+        }
+        if(a=='m'){
+          var aaaa="'m'"
+        }else if(a=='y'){
+           aaaa="'y'"
+        }else if(a=='h'){
+          aaaa="'h'"
+        }else{
+          aaaa="'g'"
+        }
+        console.log(aaaa)
+        if(b=='j'){
+            var c="'y','j'"
+            b=c
+          }else if(b=='z'){
+            var d="'y','j','z'"
+            b=d
+          }else{
+            var ddd="'y'"
+            b=ddd
+          }
+        var url='/lo/pica?vipkind='+b+'&juzhong='+aaaa;
+        console.log(url)
+        xhr.open('get',url,true);
+        xhr.send(null);
+      }	
+    }) 
+  </script>
+  	<script>
+        //大屏
+      window.onscroll=function (){
+        var ss=document.documentElement.scrollTop
+        if(ss>195){
+          di.className='pos'
+        }else{
+          lg.className=''
+          di.className='dis'
+        }
+      }
+      </script>
+</body>
+</html>

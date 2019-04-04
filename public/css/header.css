@@ -1,0 +1,110 @@
+body,p{margin:0;padding:0}
+.text-c{text-align:center;margin:0 auto}
+a {color:rgb(141, 144, 149) !important;}
+.my-small{font-size:0.8rem}
+#footer p{color:rgb(141, 144, 149) !important;}
+.dropdown{width:100px; height:20px; display:inline-block;}
+.dropdown a{
+  text-decoration:none; 
+  color:#000;
+  display:inline-block;
+  position:relative
+}
+
+.dropdown-menu{
+  width:80px;
+  list-style:none; margin:0; padding:0;
+  border:1px solid #aaa;
+  box-shadow:5px 5px 6px #000;
+  display:none;
+  position:absolute;
+  top:30px;
+}
+.dropdown-menu a{padding:6px 10px; width:150px}
+.dropdown-menu li:hover{background:#ddd;}
+@media (min-width: 992px) {
+  .dis{display:none;} 
+  #sm{display:none}
+  .color-footer{color:rgb(141, 144, 149) !important;}
+  .inp{display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 0.3rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 21rem;
+    border-color:transparent;
+  }
+  .btn {color:white !important}
+  .btn-sousuo{background:#0a8dce none repeat scroll 0 0 !important;}
+  .rel{position:relative}
+  .abs{position:absolute;left:21rem;}
+  .nav-bg{background:#eff2f7}
+  /*ͷ���߶�*/
+  .my_header{height:12rem;width:100%}
+  .my_footer{height:14rem;width:100%}
+}
+@media (max-width: 991px) {
+  .dis{display:none;}
+  #lg{display:none} 
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgb(170, 249, 255);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .sidenav a {
+    padding: 5px 5px 5px 32px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #818181;
+    display:inline-block;
+    transition: 0.3s;
+  }
+  .sidenav ul {
+    display:none;
+  }
+  .sidenav ul a{
+    font-size:1rem;
+    padding-left:3rem;
+  }
+  .sidenav a:hover, .offcanvas a:focus{
+    color:red;
+    padding-left:3rem
+  }
+  .sidenav ul a:hover{
+    padding-left:4rem
+  }
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .header-logo{width:10rem;
+    text-align:center}
+  .header-logo img{width:50%; 
+    height:100%;}
+  .he{width:5rem}
+  .he img{margin-left:5px;
+    width: 23%;}
+  #footer p{color:rgb(141, 144, 149) !important;}
+
+  #di{font-size:0.1rem}
+}
+#di{background-color:#eff2f7 ;
+height:3.5rem;
+line-height:2.8rem;}
+.pos{position:fixed;
+  top:0;
+  width:100%;
+  z-index: 99;}

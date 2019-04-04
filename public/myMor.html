@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>吴彦祖</title>
+	<meta/>
+</head>
+<body>
+	<audio controls src="D:\新建文件夹 (2)\yun\public\music/huanghuai.mp3" id='aa'></audio>
+	<textarea name="" id="dd" cols="30" rows="10">
+		[00:00.00] 作曲 : 解忧邵帅
+		[00:00.31] 作词 : 解忧邵帅
+		[00:00.93]录音/混音：张一白
+		[00:07.43]吉他/口琴：晓桐
+		[00:14.68]十九岁的那一天，我来到黄淮的面前。
+		[00:21.68]为了能和你在这儿在遇见，我支付了我的四年。
+		[00:29.43]二十岁的那一天，吉他在我身边
+		[00:36.43]张开了笨拙的手，对你的爱涌上了心头
+		[00:43.43]你是我患得患失的梦，我是你可有可无的人
+		[00:50.93]毕竟这穿越山河的箭，刺的都是用情致疾的人。
+		[00:58.43]你是我辗转反侧的梦，我是你如梦山河的故人。
+		[01:07.43]就让这牵肠挂肚的酒，硫酸一样刺激在你我的心头。
+		[01:30.43]第一次见你的时候，闽南姑娘总那么温柔，
+		[01:39.68]当我羞涩拉起你的手，以为你会陪我走到最后。
+		[01:45.43]而你离开我了以后，我开始在人世间漂流。
+		[01:52.68]选择过大大小小的梦想，谢谢你不再让我彷徨。
+		[01:59.93]你是我情深似海的依赖，我是你早已过时的旧爱。
+		[02:07.43]反正这不三不四的年纪，谁也不会只为谁而着迷。
+		[02:14.68]你是我甘心瞑目的遗憾，我用那无悔时光来填满，
+		[02:28.68]就让这无怨无悔的双手，收拾出我想有的以后。
+		[02:30.18]一首歌深夜写给黄淮，你是我无法言语诉说的爱。
+		[02:36.93]当我在原地无助徘徊，你告诉我理想必须热爱。
+		[02:44.68]你要我坚持我的执着，你让我明白为谁而活。
+		[02:51.68]永恒不只是那一瞬间，我的未来谢谢你让我看见。
+	</textarea>
+	<div id='cc'>
+	
+	</div>
+	<script>
+		var c=document.getElementById('cc')
+		var audio=document.getElementById('aa')
+		var text=document.getElementById('dd').innerHTML
+		console.log(text)
+		var arr=[];
+		var medises = text.split("\n");
+		for(var a of medises){
+			var t=a.substring(a.indexOf('[')+1,a.indexOf(']'))
+			arr.push({t:(t.split(':')[0]*60+parseFloat(t.split(":")[1])),
+			c:a.substring(a.indexOf(']')+1,a.length)})
+		}
+		audio.ontimeupdate = function () {
+			for(var item of arr){
+				var now=Math.floor(item.t)
+				var ctime=Math.floor(audio.currentTime)
+				if (now==ctime){
+					c.innerHTML=item.c
+				}
+			}s
+		}
+	</script>
+</body>
+</html>

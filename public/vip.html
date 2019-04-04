@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<link rel="stylesheet" href="bootstrap/bootstrap.css"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src='js/iframes.js'></script>
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/vip.css">
+  <title>Document</title>
+</head>
+<body onload='show()'>
+  	<!--导入header.html-->
+	<header>
+  <iframe src="header.html" marginheight="0" marginwidth="0" frameborder="0" scrolling="no"  width="100%" height=100% id="hIframe" onload='aaa()'>
+  </iframe>
+  </header>
+    <div class='container'>
+      <!-- 标题 -->
+      <div class='row' id='tag'>
+        <div class='col-lg-5 col-sm-4'>
+          <span></span>
+        </div>
+        <div class='col-lg-2 col-sm-4' id='tag-p'>
+          <p>价格套餐</p>
+          <p>Find The Right Plan</p> 
+        </div>
+        <div class='col-lg-5 col-sm-4'>
+          <span></span>
+        </div>
+      </div>
+      <!-- 会员选择 -->
+      <div class='row'>
+        <div class='col-lg-4 col-sm-12'>
+          <!-- 银牌 -->
+          <div id='vipy'>
+            <h3>银牌会员</h3>
+            <span data-c='span'></span>
+          </div>
+        </div>
+        <div class='col-lg-4 col-sm-12'>
+          <!-- 金牌 -->
+          <div id='vipj'>
+              <h3>金牌会员</h3>
+              <span data-c='span'></span>
+          </div>
+        </div>
+        <div class='col-lg-4 col-sm-12'>
+          <!-- 钻石 -->
+          <div id='vipz'>
+              <h3>钻石会员</h3>
+              <span data-c='span'></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  	<!--导入footer.html-->
+	<div id="leamain">
+      <footer class="mt-5">
+        <iframe  class="my_footer" src="footer.html" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" width="100%" height=100% id="hIframeb" onload='bbb()'></iframe>
+      </footer>
+  </div>
+  <!-- 侧边栏 -->
+  <div class='container'>
+      <div id='side' >
+        <ul class='list-unstyled'>
+          <li class='p-2'><a href=""><img src="img/icon-service.png" alt=""></a></li>
+          <li class='p-2'><a href=""><img src="img/qq.png" alt=""></a></li>
+          <li class='p-2'><a href=""><img src="img/weixin.png" alt=""></a></li>
+          <li class='p-2'><a href=""><img src="img/ziyuan.png" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+<script language="javascript">
+   function aaa(){
+	 var a=window.frames[0].window.document.body.scrollHeight-2;
+	 hIframe.style.height=a+'px'
+ }
+ window.onresize=function(){
+   bbb()
+   aaa()
+ }
+ // footer
+ function bbb(){
+	 var a=window.frames[1].window.document.body.scrollHeight-2;
+	 hIframeb.style.height=a+'px'
+ }
+</script>
+<script>
+// 从数据库获取
+function show(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				console.log(1)
+				if(xhr.readyState==4 && xhr.status==200){
+					console.log(2)
+					var result=xhr.responseText;
+					var arr=JSON.parse(result);
+					//console.log(arr);
+					//for循环遍历得到每张图的src
+					for(var t=0;t<arr.length;t++){
+            var target=arr[t];	
+            if(target.kind=='银'){
+              vipy.innerHTML+='<img src='+target.vsrc+'><p>'+target.detail+'</p><span data-c=\'ora\'>'+target.vprice+'</span><button class=\'btn\'><a href=\'vshopcar.html?vid=1\'>选择套餐</a></button>' 
+            }else if(target.kind=='金'){
+              vipj.innerHTML+='<img src='+target.vsrc+'><p>'+target.detail+'</p><span data-c=\'ora\'>'+target.vprice+'</span><button class=\'btn\'><a href=\'vshopcar.html?vid=2\'>选择套餐</a></button>' 
+            }else{
+              vipz.innerHTML+='<img src='+target.vsrc+'><p>'+target.detail+'</p><span data-c=\'ora\'>'+target.vprice+'</span><button class=\'btn\'><a href=\'vshopcar.html?vid=3\'>选择套餐</a></button>' 
+            }
+          }
+				}
+			}
+			var url='/lo/vip';
+			xhr.open('get',url,true);
+			xhr.send(null);
+		}	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+body{font-family: 微软雅黑}
+p{margin:0}
+#side{
+  width:4rem;position:fixed;
+right:0;top:50%;text-align:center}
+#side ul li{background-color:#363942;}
+#side ul li:nth-child(1):hover,#side ul li:nth-child(2):hover,#side ul li:nth-child(3):hover{background:#0a8dce}
+#side ul li:nth-child(4){background:#0a8dce}
+.notice ul li{font-size:0.9rem}
+#login{border:1px solid rgba(208,220,224,1);
+  padding:1.5rem 3rem}
+.border-need{
+border-bottom:1px solid #eee;
+height:1px;
+width:100%;
+display:block;}
+#login form input:nth-child(3),#login form input:nth-child(7){
+  width:100%;
+  background-color: #f5f5f5!important;
+  border:1px solid #eee;
+  line-height:1rem;
+  box-sizing:border-box;
+  padding:0.5rem;
+}
+#login form input:nth-child(9){
+  background-color: #eee;
+  height:14px;
+  padding:1px;
+  vertical-align: middle
+}
+#login form label:nth-child(10){
+  cursor: pointer;
+  font-size: 0.8rem
+}
+#login form:nth-child(2){display:none}
+.btn-p{background-color: #00bdff !important;}
+#login form button:nth-child(12),
+#login form button:nth-child(14){
+  margin-top:0.5rem;width:100%;
+}
+.right-q{
+  text-align:right;
+  display:block;
+}
+#regs p:nth-child(6) img:hover{background-color: black;
+  width:1rem;
+  height:1rem;
+  border-radius: 50%}
+#regs input:not(:nth-child(13)){
+  width:100%;height:2rem
+}
+#fame{width:1rem !important;
+  vertical-align: middle;
+background-color:transparent;}
+#fame+label{cursor: pointer;}
+#rela{position:relative}
+.btn-abs{
+  position:absolute;
+  right:48px;
+  border-radius:0;
+  height:32px;
+  line-height:28px;
+  top:94px;
+  padding:2px;width:50px;
+  font-size:0.8rem;
+  box-sizing: border-box;
+  background-color: #00bdff;
+  border:none;
+  color:white;
+  cursor: pointer;
+}
+.btn-reg+a{display:inline-block;
+  margin-left:31%;
+    vertical-align: middle}
+.btn-reg{vertical-align: middle;
+display:inline-block;
+background-color: #00bdff;
+border:none;
+  color:white;
+  cursor: pointer;height:2rem;width:4rem}
+.vali{display:block}
+.vali-p{display:none}
